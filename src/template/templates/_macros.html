@@ -1,0 +1,45 @@
+{% macro form_field_text(field, text='', required=False) %}
+<div class="form-group">
+  <div class="col-sm-3">
+    {% if required %}
+      {{ field.label }} *
+    {% else %}
+      {{ field.label }}
+    {% endif %}
+  </div>
+  <div class="col-sm-9">
+    {{ field(size=24, class='form-control', placeholder=text, autocomplete='off') }}
+  </div>
+</div>
+{% endmacro %}
+
+{% macro form_field_bool(field) %}
+<div class="form-group">
+  <div class="col-sm-3">
+    {{ field.label }}
+  </div>
+  <div class="col-sm-9">
+    {{ field() }}
+  </div>
+</div>
+{% endmacro %}
+
+{% macro form_field(field) %}
+<div class="form-group">
+  <div class="col-sm-3">
+    {{ field.label }}
+  </div>
+  <div class="col-sm-9">
+    {{ field(class='form-control', **kwargs) }}
+  </div>
+</div>
+{% endmacro %}
+{% macro css(url) %}
+ <link href="{{ url_for('static', filename=url) }}" rel="stylesheet">
+{% endmacro %}
+{% macro js(url) %}
+<script type='text/javascript'
+        src="{{ url_for('static', filename=url) }}"
+        charset="utf-8"></script>
+{% endmacro %}
+
