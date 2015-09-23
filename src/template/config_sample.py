@@ -2,7 +2,7 @@
 SQLALCHEMY_DATABASE_URI='sqlite:///{{project}}.db'
 
 # Flask secret key
-SECRET_KEY = 'vuudooh6ao2oojoon2bipheeK1phoo'
+SECRET_KEY = 'ootoh4ohshahJeeV3ieth7Ieghutas'
 
 # Log configuration
 LOG_PATH = '{{project}}.log'

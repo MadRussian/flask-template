@@ -1,4 +1,4 @@
-{% from "_macros.html" import css, js %}
+{% from "_macros.html" import css, js, css_link, js_link %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,16 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Template Project">
     <title>Template Project</title>
+    {{ js_link('https://code.jquery.com/jquery-2.1.4.min.js') }}
 
-    {{ css('css/bootstrap.min.css') }}
-    {{ css('font-awesome-4.0.3/css/font-awesome.min.css') }}
-    {{ css('css/jquery-ui/jquery-ui.css') }}
+    {{ css_link('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css') }}
+    {{ js_link('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js') }}
+
+    {{ css_link('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css') }}
+
+    {{ css_link('https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css') }}
+    {{ js_link('https://code.jquery.com/ui/1.11.4/jquery-ui.min.js') }}
+
+    {{ js_link('https://cdnjs.cloudflare.com/ajax/libs/sprintf/1.0.3/sprintf.min.js') }}
+    {{ js_link('https://cdnjs.cloudflare.com/ajax/libs/holder/2.8.2/holder.min.js') }}
+
     {{ css('css/main.css') }}
-    {{ js('js/jquery-1.10.2.js') }}
-    {{ js('js/jquery-ui-1.10.2.js') }}
-    {{ js('js/sprintf.min.js') }}
-    {{ js('js/bootstrap.min.js') }}
-    {{ js('js/holder.js') }}
     {{ js('js/main.js') }}
     {% block page_js %}{% endblock %}
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -26,7 +30,6 @@
     <![endif]-->
     <script type='text/javascript'>
       $SCRIPT_ROOT = {{request.script_root|tojson|safe }};
-      var page_data = {{page_data|tojson|safe }};
     </script>
   </head>
   <body>
@@ -61,7 +64,7 @@
     </div>
     <div id="footer">
       <hr/>
-      <p>Template Project &copy; 2014</p>
+      <p>Template Project &copy; 2015</p>
     </div>
   </body>
 </html>

@@ -42,4 +42,11 @@
         src="{{ url_for('static', filename=url) }}"
         charset="utf-8"></script>
 {% endmacro %}
-
+{% macro css_link(url) %}
+ <link href="{{ url }}" rel="stylesheet">
+{% endmacro %}
+{% macro js_link(url) %}
+<script type='text/javascript'
+        src="{{url}}"
+        charset="utf-8"></script>
+{% endmacro %}

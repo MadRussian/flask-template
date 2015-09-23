@@ -1,14 +1,12 @@
 from {{project}} import app, db, func
 from functools import wraps
-from flask import session, render_template, request, url_for, Blueprint
+from flask import session, render_template, request, url_for, Blueprint, g
 import flask
 import logging
 logger = logging.getLogger("app.views")
 
-"""
-# Sample Decorators to use in your views
-
 def is_logged_in(f):
+  """Sample decorator to use in functions to verify a user is logged in"""
   @wraps(f)
   def decorated_function(*args, **kwargs):
     username = session.get('username')
@@ -19,31 +17,10 @@ def is_logged_in(f):
     return f(*args, **kwargs)
   return decorated_function
 
-def is_admin(f):
-  @wraps(f)
-  def decorated_function(*args, **kwargs):
-    user = db.user.User.get(session['username'])
-    if user is not None:
-      if user.admin:
-        return f(*args, **kwargs)
-    return flask.redirect(flask.url_for('dashboard'))
-  return decorated_function
-"""
-
-def get_page_data(page="", tab=None):
-  obj = {
-    'page': page,
-  }
-  if tab is not None:
-    obj['tab'] = tab
-  return obj
-
 import main
 
-"""
-Use Blueprints for sub items.
+# Import the blueprints
+#from admin import bp_admin
 
-Example:
-from admin import admin
-app.register_blueprint(admin, url_prefix='/admin')
-"""
+# Register the blueprints
+#app.register_blueprint(bp_admin, url_prefix='/admin')

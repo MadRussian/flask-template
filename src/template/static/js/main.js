@@ -38,16 +38,12 @@ $(document).ready(function() {
   // Fix navbar height
   fix_navbars();
   $(window).resize(fix_navbars);
-  
+
   // Setup tooltips
   $(document).tooltip({
     show: { delay: 600 },
     limit: true,
   });
 
-  // Setup secondary tabs
-  if(page_data['tab'] != null) {
-    $(sprintf("li#%s", page_data['tab'])).addClass("active");
-  }
   fix_icons();
 });
